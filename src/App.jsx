@@ -4,7 +4,11 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  
+  let inputDescription = document.getElementById("description");
+  let inputPrice = document.getElementById("price");
+  let inputCategory = document.getElementById("category");
+  let Purchase = [inputDescription,inputPrice,inputCategory]
+  localStorage.setItem("Purchase", JSON.stringify(Purchase.value));
   return (
     <>
       <header><h1>Mybank</h1></header>
@@ -47,10 +51,6 @@ function App() {
     </>
     
   )
-  let inputDescription = document.getElementById("description");
-  let inputPrice = document.getElementById("price");
-  let inputCategory = document.getElementById("category")
-  localStorage.setItem("Achat", inputDescription.value, inputPrice.value , inputCategory.value);
 }
 
 
