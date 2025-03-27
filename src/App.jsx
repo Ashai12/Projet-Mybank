@@ -7,7 +7,7 @@ function App() {
   let inputDescription = document.getElementById("description");
   let inputPrice = document.getElementById("price");
   let inputCategory = document.getElementById("category");
-  let Purchase = [inputDescription,inputPrice,inputCategory]
+  let Purchase = [inputDescription,inputPrice,inputCategory];
   localStorage.setItem("Purchase", JSON.stringify(Purchase.value));
   return (
     <>
@@ -26,12 +26,12 @@ function App() {
       <div className="container">
         <div className="info">
           <h2>Purchase</h2>
-          <p>You can make transactions from the form on the page "Buy" and add a description and category to it.</p>
+          <p>You can make transactions from the form and add a description and a category to it.</p>
           </div>
 
           <div className="info">
           <h2>Check your purchases</h2>
-          <p>You can check your last transactions on the "latest transaction" page.</p>
+          <p>You can check your last transactions on the bottom of the page.</p>
           </div>
       </div>
       <br /><br /><br />
