@@ -4,11 +4,13 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
+  function store(){
   let inputDescription = document.getElementById("description");
   let inputPrice = document.getElementById("price");
   let inputCategory = document.getElementById("category");
   let Purchase = [inputDescription,inputPrice,inputCategory];
-  localStorage.setItem("Purchase", JSON.stringify(Purchase.value));
+  localStorage.setItem("Achat", JSON.stringify(Purchase[0].value,Purchase[1].value,Purchase[2].value));
+}
   return (
     <>
       <header><h1>Mybank</h1></header>
@@ -42,7 +44,7 @@ function App() {
             <input type="text" name='description' placeholder='Description' id='description' required/>
             <input type="number" name='price' placeholder='Amount' id='price'required/>
             <input type="text" name='category' placeholder='Category' id='category'required/>
-            <button>Validation</button>
+            <button onClick={store}>Validation</button>
           </form>
         </div>
       </section>
