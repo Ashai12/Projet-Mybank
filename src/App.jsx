@@ -5,12 +5,17 @@ import './App.css'
 
 function App() {
   function store(){
+    window.addEventListener('beforeunload', function (event) {
+      event.preventDefault();
+  });
   let inputDescription = document.getElementById("description");
   let inputPrice = document.getElementById("price");
   let inputCategory = document.getElementById("category");
   let Purchase = [inputDescription,inputPrice,inputCategory];
   localStorage.setItem("Achat", JSON.stringify(Purchase[0].value,Purchase[1].value,Purchase[2].value));
+  document.getElementById('recalledtext').innerHTML = localStorage.getItem('Achat');
 }
+
   return (
     <>
       <header><h1>Mybank</h1></header>
@@ -47,6 +52,7 @@ function App() {
             <button onClick={store}>Validation</button>
           </form>
         </div>
+        Dernier achat :<span id="recalledtext"></span>
       </section>
       <br /><br /><br />
       <footer>Mybank - 2025</footer>
